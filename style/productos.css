@@ -1,0 +1,277 @@
+/* =========================================================
+   FUENTES Y VARIABLES GLOBALES
+   ========================================================= */
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap");
+
+:root {
+  /* Oro 14k brillante */
+  --color-principal: rgba(242, 186, 80, 0.8);     /* Dorado principal */
+  --color-secundario: rgba(226, 178, 88, 0.8);    /* Dorado suave para fondos */
+  --color-principal-intenso:  rgba(246, 203, 122, 0.965); /* Dorado más profundo para detalles */
+  --color-hover:  rgba(229, 192, 123, 0.8);;         /* Dorado brillante al hover */
+
+  --color-texto: #333333;
+  --color-texto-claro: #ffffff;
+
+  --spacing-base: 8px;
+  --font-primary: "Source Sans Pro", sans-serif;
+
+  --capa-transparente: rgba(255, 255, 255, 0.85);
+}
+
+/* =========================================================
+   RESET Y ESTILOS GLOBALES
+   ========================================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+html,
+body {
+  font-family: var(--font-primary);
+  color: var(--color-texto);
+  background-color: var(--capa-transparente);
+  background-image: url("../img/fondo.png");
+  background-repeat: repeat;
+  background-size: 300px;
+  background-blend-mode: overlay;
+  line-height: 1.6;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* ======================================
+   HEADER
+   ====================================== */
+header.contenedorPrincipal {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+/* Contenedor principal del logo + nombres + estudio */
+.logo-contenedor {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* espacio entre los nombres y el estudio */
+  width: 100%;
+  gap: 20px;
+}
+
+/* Logo */
+.logo {
+  width: 60px;
+  height: auto;
+}
+
+/* Nombres de las personas */
+.nombres-personas {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  color: white;
+  text-align: left;
+  line-height: 1.2;
+}
+
+/* Nombre del estudio en el centro */
+.nombre-estudio {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  text-align: left;
+  flex: 1; /* ocupa el espacio restante */
+}
+
+/* Barra superior */
+.barraSuperior {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+   background-color: rgba(246, 203, 122, 0.965);
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.barraSuperior .logo img {
+  width: 80px;
+  height: auto;
+}
+
+.barraSuperior .barraNavegacion {
+  margin-left: auto;
+}
+
+/* Segunda barra (menu responsive) */
+.menuconteiner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f2bd41;
+  height: 50px;
+  padding: 0 20px;
+  position: fixed;
+  top: 70px; /* debajo de la barra superior */
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.menuconteiner .navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 15px;
+}
+
+.menuconteiner .navbar ul li a {
+  color: var(--color-texto-claro);
+  font-weight: 600;
+  padding: 15px 10px;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.menuconteiner .navbar ul li a:hover {
+  color: #cc8f00; /* Verde claro al pasar el mouse */
+}
+
+/* Icono hamburguesa */
+.menu-hamburguesa {
+  display: none;
+  cursor: pointer;
+}
+
+.menu-hamburguesa img {
+  width: 30px;
+  height: 30px;
+}
+
+
+/* ================= SECCIÓN PRODUCTOS ================= */
+section.productos {
+  padding: 20px;
+  background-color: rgba(246, 203, 122, 0.965);
+  border-radius: 8px;
+  margin: 150px auto;
+  max-width: 1100px;
+}
+
+section.productos h1 {
+  color:  #fff;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.galeriaProductos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.producto {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.producto:hover {
+  transform: scale(1.03);
+}
+
+.producto img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.producto h3 {
+  padding: 15px;
+  font-size: 16px;
+  color: #000000;
+}
+
+/* ======================================
+   FOOTER
+   ====================================== */
+footer.pieDePagina {
+  background-color: var(--color-principal);
+  color: var(--color-texto-claro);
+  padding: 30px 20px;
+
+}
+
+.contenidoFooter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+
+}
+
+
+.derechosReservados {
+  text-align: center;
+  margin-top: 0px;
+  font-size: 14px;
+  background-color: rgba(229, 192, 123, 0.8);
+  padding: 10px 0;
+
+}
+
+/* ======================================
+   RESPONSIVE
+   ====================================== */
+@media (max-width: 991px) {
+  .menuconteiner .navbar {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-principal-intenso);
+    display: none;
+    flex-direction: column;
+  }
+
+  .menuconteiner .navbar.active {
+    display: flex;
+  }
+
+  .menuconteiner .navbar ul {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .menuconteiner .navbar ul li a {
+    padding: 15px;
+    border-top: 1px solid var(--color-hover);
+  }
+
+  .menu-hamburguesa {
+    display: block;
+  }
+
+  .contenedor-imagenes {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+
+  .imagen-con-texto img {
+    height: 180px;
+  }
+
+  h1 { font-size: 36px; }
+  h2 { font-size: 28px; }
+}
