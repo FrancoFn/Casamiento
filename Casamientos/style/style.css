@@ -1,0 +1,381 @@
+/* ======================================
+   IMPORTACIÓN DE FUENTES
+   ====================================== */
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap");
+
+/* ======================================
+   RESET Y CONFIGURACIÓN GLOBAL
+   ====================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Oro 14k brillante */
+  --color-principal: rgba(242, 186, 80, 0.8);     /* Dorado principal */
+  --color-secundario: rgba(226, 178, 88, 0.8);    /* Dorado suave para fondos */
+  --color-principal-intenso:  rgba(246, 203, 122, 0.965);; /* Dorado más profundo para detalles */
+  --color-hover:  rgba(229, 192, 123, 0.8);;         /* Dorado brillante al hover */
+
+  --color-texto: #333333;
+  --color-texto-claro: #ffffff;
+
+  --spacing-base: 8px;
+  --font-primary: "Source Sans Pro", sans-serif;
+
+  --capa-transparente: rgba(255, 255, 255, 0.85);
+}
+
+html, body {
+  font-family: var(--font-primary);
+  background-color: #ffffff;
+  color: var(--color-texto);
+  line-height: 1.6;
+  width: 100%;
+  
+}
+
+body {
+  font-family: var(--font-primary);
+  font-style: italic;
+  color: var(--color-texto);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+min-height: 100vh;
+  background-color: var(
+    --capa-transparente
+  ); /* capa blanca semi-transparente */
+  background-image: url("../img/fondo.png"); /* imagen de fondo */
+  background-repeat: repeat;
+  background-size: 300px;
+  background-blend-mode: overlay; /* mezcla el color y la imagen */
+   
+}
+
+
+/* ======================================
+   HEADER
+   ====================================== */
+header.contenedorPrincipal {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.logo-contenedor {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 20px;
+}
+
+.logo {
+  width: 60px;
+  height: auto;
+}
+
+.nombres-personas {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  color: white;
+  text-align: left;
+  line-height: 1.2;
+}
+
+.nombre-estudio {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  flex: 1;
+}
+
+/* Barra superior */
+.barraSuperior {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-principal-intenso);
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.barraSuperior .logo img {
+  width: 80px;
+}
+
+.barraSuperior .barraNavegacion {
+  margin-left: auto;
+}
+
+/* Segunda barra */
+.menuconteiner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f2bd41;
+  height: 50px;
+  padding: 0 20px;
+  position: fixed;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.menuconteiner .navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 15px;
+}
+
+.menuconteiner .navbar ul li a {
+  color: var(--color-texto-claro);
+  font-weight: 600;
+  padding: 15px 10px;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.menuconteiner .navbar ul li a:hover {
+   color: #cc8f00;
+}
+
+/* Icono hamburguesa */
+.menu-hamburguesa {
+  display: none;
+  cursor: pointer;
+}
+
+.menu-hamburguesa img {
+  width: 30px;
+  height: 30px;
+}
+
+/* ======================================
+   MAIN
+   ====================================== */
+main {
+  margin-top: 130px;
+  padding: 20px;
+}
+
+h1 {
+  font-family: "Segoe Print", cursive;
+  font-size: 42px;
+  font-weight: 900;
+  color: var(--color-principal);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--color-principal);
+  text-align: center;
+  margin: 30px 0 20px 0;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-texto-claro);
+  text-align: center;
+}
+
+.bold-text {
+  text-align: center;
+  width: 70%;
+  margin: 10px auto;
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--color-texto);
+}
+
+/* ===== Forzar centrado y tamaño EXACTO ===== */
+section.contenidoPrincipal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imagen-inicio {
+  width: 70%;
+  display: block;
+  margin: 20px auto;
+}
+
+.imagen-inicio img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  border: 4px solid rgba(242, 186, 80, 0.5);
+}
+
+
+/* ======================================
+   GALERÍA
+   ====================================== */
+.contenedor-imagenes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.imagen-con-texto {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.imagen-con-texto img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.imagen-con-texto:hover img {
+  transform: scale(1.05);
+}
+
+.imagen-con-texto h3 {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(213, 172, 76, 0.8); /* Dorado profundo translúcido */
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+/* ======================================
+   NOVEDADES (slider)
+   ====================================== */
+.recuadro {
+  background-color: var(--color-secundario);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.navegacion button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--color-principal);
+  color: var(--color-texto-claro);
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+  transition: background 0.3s ease;
+}
+
+.navegacion #anterior { left: 10px; }
+.navegacion #siguiente { right: 10px; }
+
+.navegacion button:hover {
+  background-color: var(--color-principal-intenso);
+}
+
+/* ======================================
+   FOOTER
+   ====================================== */
+footer.pieDePagina {
+  background-color: var(--color-principal);
+  color: var(--color-texto-claro);
+  padding: 30px 20px;
+
+}
+
+.contenidoFooter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+
+}
+
+
+.derechosReservados {
+  text-align: center;
+  margin-top: 0px;
+  font-size: 14px;
+  background-color: rgba(229, 192, 123, 0.8);
+  padding: 10px 0;
+
+}
+
+/* ======================================
+   RESPONSIVE
+   ====================================== */
+@media (max-width: 991px) {
+  .menuconteiner .navbar {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-principal-intenso);
+    display: none;
+    flex-direction: column;
+  }
+
+  .menuconteiner .navbar.active {
+    display: flex;
+  }
+
+  .menuconteiner .navbar ul {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .menuconteiner .navbar ul li a {
+    padding: 15px;
+    border-top: 1px solid var(--color-hover);
+  }
+
+  .menu-hamburguesa {
+    display: block;
+  }
+
+  .contenedor-imagenes {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+
+  .imagen-con-texto img {
+    height: 180px;
+  }
+
+  h1 { font-size: 36px; }
+  h2 { font-size: 28px; }
+
+
+}
+
+
